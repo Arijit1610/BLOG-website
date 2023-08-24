@@ -66,8 +66,8 @@ def contact():
     # sender = email,
     # recipients = [params['gmail-user']],
     # body = message + "\n" +phone ,)
-		msg = Message('Hello', sender = params['gmail-user'], recipients = '[nandyarijit1610@gmail.com]') 
-		msg.body = "Hello Flask message sent from Flask-Mail"
+		msg = Message('Hello', sender = params['gmail-user'], recipients = ['nandyarijit1610@gmail.com','annandy2002@gmail.com','berapriti727@gmail.com']) 
+		msg.body = "Hello Flask message sent from Flask-Mail" + f'\n{name} This mail is sent using flask app' + f'\n{phone}' + f'\n{email}'
 		mail.send(msg)
 	return render_template('contact.html',params=params)
 
