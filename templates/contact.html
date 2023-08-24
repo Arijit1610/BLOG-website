@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+CONTACT PAGE
+{% endblock %}
+
+{% block heading %}
+Blog Contact Page
+{% endblock %}
+{% block content %}
+<div class="containers">
+	<form name="sentMessage" id="contactForm" action = "/contact" method="post" novalidate>
+		<div class="row">
+			<div class="col-25">
+				<label for="name">Name</label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="name" name="name" placeholder="Enter your name.." required>
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-25">
+				<label for="lname">Last Name</label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-25">
+				<label for="num">Phone</label>
+			</div>
+			<div class="col-75">
+				<input type="number" name="num" id="num" placeholder="Enter your Phone Number" required>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="message">Message</label>
+			</div>
+			<div class="col-75">
+				<textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="date">Date</label>
+			</div>
+			<div class="col-75">
+				<input type="date" id="date" name="date" placeholder="Date">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-25">
+				<label for="email">Email</label>
+			</div>
+			<div class="col-75">
+				<input type="email" id="email" name="email" placeholder="Enter your email.." required>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<input type="submit" value="Submit">
+		</div>
+	</form>
+</div>
+{% endblock %}
