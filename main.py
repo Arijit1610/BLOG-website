@@ -35,11 +35,11 @@ app.config.update(
 	MAIL_DEFAULT_SENDER = params['gmail-user']
 )
 mail = Mail(app)
-@app.route("/")
-@app.route("/home")
+# @app.route("/")
+# @app.route("/home")
 
-def home():
-    return render_template('index.html',params=params)
+# def home():
+#     return render_template('index.html',params=params)
 
 
 @app.route("/about")
@@ -66,7 +66,7 @@ def contact():
     # sender = email,
     # recipients = [params['gmail-user']],
     # body = message + "\n" +phone ,)
-		msg = Message('Hello', sender = params['gmail-user'], recipients = ['nandyarijit1610@gmail.com','annandy2002@gmail.com','berapriti727@gmail.com']) 
+		msg = Message('Hello', sender = params['gmail-user'], recipients = ['nandyarijit1610@gmail.com',params['gmail-user']]) 
 		msg.body = "Hello Flask message sent from Flask-Mail" + f'\n{name} This mail is sent using flask app' + f'\n{phone}' + f'\n{email}'
 		mail.send(msg)
 	return render_template('contact.html',params=params)
@@ -75,7 +75,11 @@ def contact():
 @app.route("/blog")
 def blog_page():
 	return render_template('blog.html',params=params)
-
-
+@app.route("/")
+@app.route("/home", methods=['GET'])
+def post():
+	cur.execute("select * from post where slug = 'first post'")
+	result = cur.fetchall()
+	return render_template('index.html',params=params, result = result)
 app.run(debug=True)
 
