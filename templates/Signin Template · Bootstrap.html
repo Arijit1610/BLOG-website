@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign In page
+{% endblock %}
+<!-- {% block link %}
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Signin Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/getbootstrap.com_docs_4.3_dist_css_bootstrap.min.css') }}"> -->
+
+
+<style>
+	* {
+		font-family: Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+		font-style: italic;
+		font-weight: bolder;
+	}
+
+	.bd-placeholder-img {
+		font-size: 1.125rem;
+		text-anchor: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.divstyle {
+		display: block;
+		margin-left: 38%;
+		margin-right: 31%;
+		background-color: bisque;
+		padding: 31px 40px;
+		margin-bottom: 10px;
+	}
+
+	.img-cen {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 25%;
+		height: 25%;
+		border-radius: 50%;
+		border-width: 1px soild rgb(14, 165, 230);
+		/* margin-left: 79px; */
+	}
+
+	.admin {
+		text-align: center;
+	}
+
+	.btn-cen {
+		margin: 0;
+		position: absolute;
+		/* top: 50%; */
+		left: 50%;
+		/* -ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%); */
+		padding: 0;
+	}
+
+
+	@media (min-width: 768px) {
+		.bd-placeholder-img-lg {
+			font-size: 3.5rem;
+		}
+	}
+</style>
+<!-- Custom styles for this template -->
+<!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/getbootstrap.com_docs_4.3_examples_sign-in_signin.css') }}"> -->
+
+{% endblock %}
+
+{% block heading %}
+<!-- signin Page -->
+{% endblock %}
+<!-- Page Header -->
+{% block content %}
+<div class="divstyle">
+	<form class="form-signin">
+		<img class="mb-4 img-cen" src="{{ url_for('static',filename = 'img/login.png')}}" alt="" width="72" height="72">
+		<h1 class="h3 mb-3 font-weight-normal admin">Admin Login</h1>
+		<label for="inputEmail" class="sr-only">Email address</label>
+		<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+		<div class="checkbox mb-3">
+			<label>
+				<input type="checkbox" value="remember-me"> Remember me
+			</label>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block btn-cen" type="submit">Sign in</button><br>
+		<p class="mt-5 mb-3 text-muted admin">&copy; {{params['websitename']}} 2023-2024</p>
+	</form>
+</div>
+{% endblock %}

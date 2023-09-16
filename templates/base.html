@@ -12,8 +12,11 @@
 		{% endblock %}
 	</title>
 	<!-- Favicon-->
-	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename = 'assets/favicon.ico')}}" />
 	<!-- Core theme CSS (includes Bootstrap)-->
+	{% block link %}
+
+	{% endblock %}
 	<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
 </head>
 
@@ -54,7 +57,7 @@
 	<!-- Footer-->
 	<footer class="py-5 bg-dark">
 		<div class="container">
-			<p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+			<p class="m-0 text-center text-white">Copyright &copy; {{params['websitename']}} 2023</p>
 		</div>
 	</footer>
 	<!-- Bootstrap core JS-->
